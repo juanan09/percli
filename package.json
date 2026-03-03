@@ -1,0 +1,26 @@
+{
+  "name": "percli",
+  "version": "1.0.0",
+  "description": "Perplexity CLI",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "npx genkit start -- node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@genkit-ai/google-genai": "^1.29.0",
+    "@genkit-ai/googleai": "^1.28.0",
+    "@tavily/core": "0.7.2",
+    "chalk": "^5.6.2",
+    "dotenv": "^17.3.1",
+    "genkit": "^1.29.0",
+    "ora": "^9.3.0"
+  },
+  "devDependencies": {
+    "genkit-cli": "^1.29.0"
+  }
+}

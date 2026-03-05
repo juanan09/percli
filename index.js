@@ -5,6 +5,7 @@ import readline from 'readline';
 import { genkit } from 'genkit/beta';
 import { googleAI } from '@genkit-ai/google-genai';
 import { tavily } from '@tavily/core';
+import { createChatAgent } from './src/agent.js';
 
 //Cargamos las variables de entorno desde el archivo .env
 dotenv.config();
@@ -29,7 +30,7 @@ async function startInteractive() {
         });
 
         // Create chat agent with search capabilities
-        //const chat = createChatAgent(ai, client, googleAI.model('gemini-2.5-pro'));
+        const chat = createChatAgent(ai, client, googleAI.model('gemini-2.5-flash'));
 
         const rl = readline.createInterface({
             input: process.stdin,
@@ -39,7 +40,7 @@ async function startInteractive() {
         });
 
         console.log(chalk.cyan.bold('\n╔════════════════════════════════════════════════════╗'));
-        console.log(chalk.cyan.bold('║   Welcome to Perplexity CLI - Interactive Mode     ║'));
+        console.log(chalk.cyan.bold('║   Welcome to Percli CLI - Interactive Mode     ║'));
         console.log(chalk.cyan.bold('╚════════════════════════════════════════════════════╝'));
         console.log(chalk.gray('Type your questions and get AI-powered answers with sources!'));
         console.log(chalk.gray('Chat history is maintained during this session.'));
@@ -86,7 +87,7 @@ async function startInteractive() {
         });
 
         rl.on('close', () => {
-            console.log(chalk.cyan.bold('\n👋 Thanks for using Perplexity CLI. Goodbye!\n'));
+            console.log(chalk.cyan.bold('\n👋 Thanks for using Percli CLI. Goodbye!\n'));
             process.exit(0);
         });
 

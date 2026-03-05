@@ -1,7 +1,7 @@
 {
   "name": "percli",
   "version": "1.0.0",
-  "description": "Perplexity CLI",
+  "description": "Percli CLI",
   "license": "ISC",
   "author": "",
   "type": "module",
